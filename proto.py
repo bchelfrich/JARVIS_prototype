@@ -2,7 +2,7 @@ import sys
 import time
 
 import wolframalpha
-client = wolframalpha.Client('######-##########') # Generate your own API key on wolframalpha.com
+client = wolframalpha.Client('A2AALP-HWH7KKHVEQ')
 
 import wikipedia
 
@@ -27,12 +27,12 @@ engine.say('My name is JARVIS, Just A Really Very Intelligent System.')
 engine.runAndWait()
 
 ans = typingInput('Identify yourself:\n').capitalize().strip()
-if ans == 'Brandon': # ENTER YOUR OWN NAME HERE
+if ans == 'Brandon':
     engine.say('Hello sir. What can I do for you today?')
     engine.runAndWait()
 
     while True:
-        ans = typingInput('Search:\n')
+        ans = typingInput('Search:\n').capitalize()
         if ans == 'Exit':
             break
         try:
@@ -41,6 +41,7 @@ if ans == 'Brandon': # ENTER YOUR OWN NAME HERE
             print('Wolfram says: '+ wolfram_res + '\n\n Wikipedia says: '+
             wiki_res)
             engine.say(wolfram_res)
+            engine.runAndWait()
         except wikipedia.exceptions.DisambiguationError:
             wolfram_res = next(client.query(ans).results).text
             print('Wolfram says: '+ wolfram_res)
@@ -62,5 +63,3 @@ else:
     engine.runAndWait()
     time.sleep(1)
     exit()
-
-print('test')
