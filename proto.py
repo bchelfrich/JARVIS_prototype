@@ -2,7 +2,7 @@ import sys
 import time
 
 import wolframalpha
-client = wolframalpha.Client('A2AALP-HWH7KKHVEQ')
+client = wolframalpha.Client('') # Get your API key from wolframalpha.com
 
 import wikipedia
 
@@ -27,7 +27,7 @@ engine.say('My name is JARVIS, Just A Really Very Intelligent System.')
 engine.runAndWait()
 
 ans = typingInput('Identify yourself:\n').capitalize().strip()
-if ans == 'Brandon':
+if ans == 'Brandon': # ENTER YOUR OWN NAME HERE
     engine.say('Hello sir. What can I do for you today?')
     engine.runAndWait()
 
